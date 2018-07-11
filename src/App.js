@@ -85,7 +85,7 @@ class App extends Component {
     onSubmit = () => {
         this.setState({ imageUrl: this.state.input })
         
-        fetch('https://git.heroku.com/immense-escarpment-90084.git/imageurl', {
+        fetch('https://immense-escarpment-90084.herokuapp.com/imageurl', {
             method: "post",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
@@ -94,7 +94,7 @@ class App extends Component {
         }).then(res => res.json())        
         .then(res => {
             if (res) {
-                fetch('https://git.heroku.com/immense-escarpment-90084.git/image', {
+                fetch('https://immense-escarpment-90084.herokuapp.com/image', {
                     method: "put",
                     headers: {"Content-Type": "application/json"},
                     body: JSON.stringify({
