@@ -31,7 +31,7 @@ class Signup extends React.Component {
     onSignupSubmit = () => {
 
         const {name, email, password } = this.state
-        fetch("http://localhost:3000/Signup", {
+        fetch("https://immense-escarpment-90084.herokuapp.com/Signup", {
             method: "post",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
@@ -45,7 +45,7 @@ class Signup extends React.Component {
                 this.props.loadUser(user)
                 this.props.onRouteChange('home')
             }
-        })
+        }).catch(console.log())
     } 
     render () {
     return (
